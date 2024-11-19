@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-black text-white;
+  }
+}
+
+@layer utilities {
+  .bg-gradient {
+    @apply bg-gradient-to-r from-purple-500 to-pink-500;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .perspective {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .rotate-y-12 {
+    transform: rotateY(12deg);
+  }
+
+  .animate-typing {
+    animation: typing 3s steps(20);
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation-fill-mode: forwards;
+  }
+
+  .animate-name {
+    animation: 
+      typing 2s steps(20) 3s forwards,
+      blink 0.7s steps(1) infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    width: 0;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes tilt {
+  0%, 100% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(15deg);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
